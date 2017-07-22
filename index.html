@@ -24,8 +24,7 @@ a:hover {
 // handles the click event, sends the query
 function getSuccessOutput() {
   $.ajax({
-    url: 'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAWfC2wgOQ2o7Af2C3gK_0MBgZglbe4Ctk
-',
+    url: 'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAWfC2wgOQ2o7Af2C3gK_0MBgZglbe4Ctk',
     complete: function(response) {
       $('#output').html(response.responseText);
     },
