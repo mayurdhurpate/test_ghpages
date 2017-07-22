@@ -1,4 +1,12 @@
-<style>
+<html>
+  <head>
+    <script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+    
+    
+    <style>
 a {
   padding: 0.2em;
 }
@@ -15,15 +23,16 @@ a:hover {
   background-color: #efefef;
 }
 </style>
+    
+    
+  </head>
+<body>
 
 <a href="#" onclick="return getSuccessOutput();"> test success </a> | <a href="#" onclick="return getFailOutput(); return false;"> test failure</a>
 <div id="output">waiting for action</div>
 
 
-<script
-  src="https://code.jquery.com/jquery-1.12.4.min.js"
-  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-  crossorigin="anonymous"></script>
+
 
 <script>
 // handles the click event, sends the query
@@ -55,3 +64,5 @@ function getFailOutput() {
 }
 
 </script>
+</body>
+</html>
