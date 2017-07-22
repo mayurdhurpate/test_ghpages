@@ -38,6 +38,7 @@ a:hover {
 // handles the click event, sends the query
 function getSuccessOutput() {
   $.ajax({
+    type: 'POST',
     url: 'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyAWfC2wgOQ2o7Af2C3gK_0MBgZglbe4Ctk',
     complete: function(response) {
       $('#output').html(response.responseText);
@@ -51,6 +52,7 @@ function getSuccessOutput() {
 // handles the click event, sends the query
 function getFailOutput() {
   $.ajax({
+    type: 'POST',
     url: 'myAjax.php',
     success: function(response) {
       console.log(data, response);
