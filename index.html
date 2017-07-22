@@ -49,10 +49,11 @@ function getSuccessOutput() {
   });
   return false;
 }
+  
 // handles the click event, sends the query
 function getFailOutput() {
   $.ajax({
-    type: 'POST',
+    method: 'POST',
     url: 'myAjax.php',
     success: function(response) {
       console.log(data, response);
