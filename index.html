@@ -1,0 +1,52 @@
+<style>
+a {
+  padding: 0.2em;
+}
+
+a:hover {
+  background-color: #02AAEE;
+}
+
+#output {
+  display: block;
+  margin-top: 8px;
+  padding: 1%;
+  border: 1px solid #666;
+  background-color: #efefef;
+}
+</style>
+
+<a href="#" onclick="return getSuccessOutput();"> test success </a> | <a href="#" onclick="return getFailOutput(); return false;"> test failure</a>
+<div id="output">waiting for action</div>
+
+
+<script>
+// handles the click event, sends the query
+function getSuccessOutput() {
+  $.ajax({
+    url: '/echo/js/?js=hello%20world!',
+    complete: function(response) {
+      $('#output').html(response.responseText);
+    },
+    error: function() {
+      $('#output').html('Bummer: there was an error!');
+    },
+  });
+  return false;
+}
+// handles the click event, sends the query
+function getFailOutput() {
+  $.ajax({
+    url: 'myAjax.php',
+    success: function(response) {
+      console.log(data, response);
+      $('#output').html(response);
+    },
+    error: function() {
+      $('#output').html('Bummer: there was an error!');
+    },
+  });
+  return false;
+}
+
+</script>
